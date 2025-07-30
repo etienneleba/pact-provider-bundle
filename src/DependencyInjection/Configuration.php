@@ -14,6 +14,7 @@ class Configuration implements ConfigurationInterface
         $treeBuilder->getRootNode()
             ->children()
                 ->arrayNode('state_change')
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('url')
                             ->defaultValue('/pact-change-state')
