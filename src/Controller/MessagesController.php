@@ -21,10 +21,10 @@ class MessagesController implements ControllerInterface
 
     public function handle(Request $request): ?Response
     {
-        $providerStates = $this->getProviderStates($request);
-        $this->handleProviderStates($providerStates, Action::SETUP);
+//        $providerStates = $this->getProviderStates($request);
+//        $this->handleProviderStates($providerStates, Action::SETUP);
         $message = $this->dispatchMessage($request);
-        $this->handleProviderStates($providerStates, Action::TEARDOWN);
+//        $this->handleProviderStates($providerStates, Action::TEARDOWN);
 
         if ($message) {
             return new Response($message->contents, Response::HTTP_OK, [
